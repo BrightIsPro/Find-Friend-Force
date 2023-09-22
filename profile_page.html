@@ -54,12 +54,12 @@
         <div class="content2">
             <div class="headporf">
                 <div class="headerprof">
-                    <img id="imgPrf" class="imghead1" src="http://t3.gstatic.com/licensed-image?q=tbn:ANd9GcS8Q25v_8kg6LXnOwFBDKUjZaPAxdSW9BaB7oxPaMFdEljY-wRbUJPaTGPccf1MpMFmb5LZ-HZngXGJOW1b6H4" alt="">
+                    <img id="imgPrf" class="imghead1" src="" alt="">
                 </div>
                 <div class="headercontent">
                     <div class="topcontent">
                         <h3 id="namePrf" class="name01">Profile Name</h3>
-                        <button class="Edit">Edit Profile</button>  
+                        <button class="Edit" id="Edit">Edit Profile</button>  
                         <img class="setting" src="https://cdn-icons-png.flaticon.com/512/3019/3019014.png?fbclid=IwAR0NV-lmuYGqSh_VxKtqGV7gvKjE1_yBplSpkHoWfWom0tL4ITuJ8myiVXs" alt="">                    
                     </div>
                     <div class="followconten">
@@ -69,7 +69,30 @@
                     </div>  
                 </div>
             </div>
-            
+
+
+            <!--ป๊อบอัพ เปลี่ยนรูปโปร-->
+            <div class="popup">
+                <div class="popup-content">
+                    <button type="button" class="close">X</button>
+                    <input type="text" placeholder="profile name" id="profile-name-input">
+                    <input type="text" placeholder="link image" id="link-image-input">
+                    <button type="submit" class="btn submit-edit", id="summitUpdate">Submit</button>
+                </div>
+            </div>
+
+            <script>
+            document.getElementById("Edit").addEventListener("click",function(){
+                document.querySelector(".popup").style.display="flex";
+            })
+            document.querySelector(".close").addEventListener("click",function(){
+                document.querySelector(".popup").style.display="none";
+            })
+            </script>
+
+            <!--ป๊อบอัพ เปลี่ยนรุปโรป-->
+
+
             <div class="under"></div>
             
             <div class="bodyprof0">
