@@ -1,16 +1,21 @@
 const navProfile = document.getElementById("navbar-profile");
 const profileName = document.getElementById("namePrf");
 const profileImage = document.getElementById("imgPrf");
-const summitUpdate = document.getElementById("summitUpdate");
+const submitUpdate = document.getElementById("submitUpdate");
+const navbarProfile = document.getElementById("navbar-profile");
+
+const emailPrf = document.getElementById("emailPrf");
+const hoursPrf = document.getElementById("hoursPrf");
+
 
 const apiPath = 'http://localhost:8000/';
 
-const defaultImageLink = './image/msedge_Z3dZKNX4Yt.png';
+const defaultImageLink = '';
 
-var getUsernamae;
-var getPasswrod;
-var getEmail;
-var getHours;
+var getUsernamae = "?";
+var getPasswrod = "?";
+var getEmail = "?@?";
+var getHours = 0;
 
 // On Load
 fetch(apiPath + 'users')
@@ -31,13 +36,20 @@ fetch(apiPath + 'users')
     getEmail = email;
     getHours = amount_hours;
 
+    if(
+      getUsernamae !== null,
+      getPasswrod !== null,
+      getEmail !== null,
+      getHours != null) {
+        emailPrf.innerHTML = getEmail;
+        hoursPrf.innerHTML = "time: "+ timeToMinutes(getHours) + "mins";
+      }
 
+
+    profileImage.src = profile_picture;
     profileName.innerHTML = name_profile;
+    navbarProfile.src = profile_picture;
 
-    if (profile_picture === null) {
-      profileImage.src = defaultImageLink;
-    }
-    profileImage.src = data[0].profile_picture;
   })
   .catch(err => {
     console.error("ERROR fetching data.");
@@ -67,6 +79,11 @@ fetch(apiPath + "users/0", {
     // Use the fetched data as needed
     let profile_name_input = document.getElementById("profile-name-input");
     let link_image_input = document.getElementById("link-image-input");
+    let email_user_input = document.getElementById('email-input');
+    let password_user_input = document.getElementById('password-input');
+
+    email_user_input.value = data.email;
+    password_user_input.value = data.password;
     profile_name_input.value = data.name_profile;
     link_image_input.value = data.profile_picture;
   })
@@ -76,9 +93,11 @@ fetch(apiPath + "users/0", {
   });
 
 // Update user data using PUT
-summitUpdate.addEventListener('click', () => {
+submitUpdate.addEventListener('click', () => {
   let profile_name_input = document.getElementById("profile-name-input");
   let link_image_input = document.getElementById("link-image-input");
+  let email_user_input = document.getElementById('email-input');
+  let password_user_input = document.getElementById('password-input');
 
   fetch(apiPath + "users/0", {
     method: 'PUT',
@@ -112,3 +131,31 @@ summitUpdate.addEventListener('click', () => {
       console.error(error);
     });
 });
+
+
+// Drop down
+document.getElementById("Edit").addEventListener("click",function(){
+  document.querySelector(".popup").style.display="flex";
+})
+document.querySelector(".close").addEventListener("click",function(){
+  document.querySelector(".popup").style.display="none";
+})
+
+// timer to minites
+function timeToMinutes(timeString) {
+  const parts = timeString.split(':');
+  
+  if (parts.length !== 3) {
+    throw new Error('Invalid time format');
+  }
+
+  const hours = parseInt(parts[0], 10);
+  const minutes = parseInt(parts[1], 10);
+  const seconds = parseInt(parts[2], 10);
+
+  if (isNaN(hours) || isNaN(minutes) || isNaN(seconds)) {
+    throw new Error('Invalid time format');
+  }
+
+  return hours * 60 + minutes + seconds / 60;
+}

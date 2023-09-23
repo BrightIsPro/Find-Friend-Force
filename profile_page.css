@@ -87,12 +87,12 @@ ion-icon {
 }
 
 .picprofile_content {
-    height: 45px;
-    width: 45px;
-    border-radius: 1.75em;
+    height: 3em;
+    width: 3em;
+    border-radius: 2em;
     float: right;
     margin-left: 1em;
-    margin-right: 1em;
+    margin-right: 2em;
 }
 
 .notify_content {
@@ -671,10 +671,10 @@ body::-webkit-scrollbar {
     border: 1px solid gray;
 }
 .popup{
-    background:#393A3C;
+    background:rgba( 0, 0, 0, 0.5 );
     width: 100%;
     height: 100%;
-    position: absolute;
+    position: fixed;
     top: 0;
     display:none;
     justify-content: center;
@@ -683,13 +683,40 @@ body::-webkit-scrollbar {
 }
 
 .popup-content{
-    height: 250px;
-    width: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    height: fit-content;
+    width: 50%;
     background: white;
     padding: 20px;
     border-radius: 5px;
     position: relative;
+    padding: 2em;
+    
 }
+
+.popup-content > div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: center;
+    gap: 8px;
+}
+
+.popup-content label {
+    font-size: 1em;
+}
+
+.popup-content input {
+    height: 2em;
+    width: 100%;
+    display: block;
+    font-size: 1em;
+}
+
 
 .input{
     margin: 20px auto;
@@ -703,9 +730,9 @@ body::-webkit-scrollbar {
     top:-15px;
     right:-15px;
     background:white;
-    width: auto;
-    height: fit-content;
-    border-radius: 50%;
+    width: 2em;
+    height: 2em;
+    border-radius: 1em;
     cursor: pointer;
     font-size: 1.2em;
 }
