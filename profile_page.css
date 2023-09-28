@@ -4,24 +4,24 @@
 ::-webkit-scrollbar {
     height: 8px;
     width: 8px;
-  }
-  
-  /* Track */
-  ::-webkit-scrollbar-track {
+}
+
+/* Track */
+::-webkit-scrollbar-track {
     background: #fff;
     border-radius: 10px;
-  }
-  
-  /* Handle */
-  ::-webkit-scrollbar-thumb {
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
     background: #363636;
     border-radius: 10px;
-  }
-  
-  /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
+}
 
 * {
     padding: 0;
@@ -58,10 +58,14 @@ ion-icon {
     align-items: center;
     margin-left: 1rem;
     width: 10%;
-}.imgbrand_box img {
+}
+
+.imgbrand_box img {
     height: 50px;
     width: 50px;
-}.imgbrand_box h1 {
+}
+
+.imgbrand_box h1 {
     color: white;
     font-weight: bold;
     font-size: larger;
@@ -80,7 +84,9 @@ ion-icon {
     margin-left: 1em;
     margin-right: 1em;
     transition: all 0.2s;
-}.coinshop_content:hover {
+}
+
+.coinshop_content:hover {
     cursor: pointer;
     transform: scale(0.9);
     filter: drop-shadow(0 0 5px #FFB743);
@@ -101,7 +107,9 @@ ion-icon {
     float: right;
     margin-left: 1em;
     margin-right: 1em;
-}.notify_content:hover {
+}
+
+.notify_content:hover {
     cursor: pointer;
     transform: scale(0.9);
     filter: drop-shadow(0 0 5px #FF00E5);
@@ -111,7 +119,9 @@ ion-icon {
 .nav form {
     transform: translateX(8rem);
     width: 60%;
-  }.nav form input {
+}
+
+.nav form input {
     height: 2.5rem;
     width: 100%;
     padding-left: 2.5rem;
@@ -119,17 +129,23 @@ ion-icon {
     border: 2px solid #8F9092;
     background: #393A3C;
     color: #fff;
-  }.nav form input:focus {
+}
+
+.nav form input:focus {
     outline: none;
-  }.nav form input::placeholder {
+}
+
+.nav form input::placeholder {
     color: #8F9092;
-  }.nav form ion-icon {
+}
+
+.nav form ion-icon {
     left: 20%;
     transform: translate(-13.25rem, 8px);
     font-size: 24px;
     position: absolute;
     color: #8F9092;
-  }
+}
 
 .searchOut {
     display: flex;
@@ -138,13 +154,15 @@ ion-icon {
     position: absolute;
     width: 100%;
     height: 0%;
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 4.5px );
-    -webkit-backdrop-filter: blur( 4.5px );
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
     border-radius: 10px;
     transition: all 0.75s;
     overflow: hidden;
-  }.searchOut li {
+}
+
+.searchOut li {
     opacity: 0;
     transition: all 0.25s;
     padding: 0.25rem 0.5rem;
@@ -154,25 +172,29 @@ ion-icon {
     background: #D9D9D9;
     margin: 0.25rem;
     width: 99%;
-  }.searchOut a {
+}
+
+.searchOut a {
     color: #000;
     font-size: 18px;
     text-decoration: none;
-  }
-  
-  .searchOut.active {
+}
+
+.searchOut.active {
     display: flex;
     flex-direction: column;
     align-items: center;
     position: absolute;
     width: 100%;
     height: fit-content;
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 4.5px );
-    -webkit-backdrop-filter: blur( 4.5px );
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4.5px);
+    -webkit-backdrop-filter: blur(4.5px);
     border-radius: 10px;
     transition: all 0.75s;
-  }.searchOut.active li {
+}
+
+.searchOut.active li {
     transition: all 0.25s;
     padding: 0.25rem 0.5rem;
     list-style: none;
@@ -182,27 +204,34 @@ ion-icon {
     margin: 0.25rem;
     width: 99%;
     opacity: 1;
-  }.searchOut.active li:hover {
+}
+
+.searchOut.active li:hover {
     cursor: pointer;
     background: #e7e7e7;
-  }.searchOut.active a {
+}
+
+.searchOut.active a {
     color: #000;
     font-size: 18px;
     text-decoration: none;
-  }
-  
-  .searchUserInfo {
+}
+
+.searchUserInfo {
     display: flex;
-  }
-  .searchUserInfo img{
+}
+
+.searchUserInfo img {
     height: 50px;
     width: 50px;
     border-radius: 100%;
     border: 1px solid #e7e7e7;
     object-fit: cover;
-  }.searchUserInfo h5 {
+}
+
+.searchUserInfo h5 {
     margin: 0.5rem 0.5rem;
-  }
+}
 
 /*///////////////////////////////////////////////////////////////// */
 
@@ -211,11 +240,11 @@ body {
     background-color: #171717;
 }
 
-.body {
+.container-sidebar {
     display: flex;
 }
 
-.sidebar{
+.sidebar {
     position: fixed;
     top: 94px;
     width: 13%;
@@ -229,7 +258,7 @@ body {
     z-index: 100;
 }
 
-.title-sidebar{
+.title-sidebar {
     height: 88px;
     width: 100%;
     font-size: 24px;
@@ -255,20 +284,20 @@ body {
     font-size: 20px;
     display: block;
     text-align: start;
-    
+
 }
 
-.display1 > a {
-  text-decoration: none;
-  color: #8F9092;
-  line-height: 2em;
+.display1>a {
+    text-decoration: none;
+    color: #8F9092;
+    line-height: 2em;
 }
 
-.display1 > a:hover {
-  color: white;
+.display1>a:hover {
+    color: white;
 }
 
-.content1{
+.content1 {
     color: rgb(255, 255, 255);
     position: relative;
     top: 94px;
@@ -277,7 +306,7 @@ body {
     z-index: 10;
 }
 
-.content2{
+.profile-content {
     color: rgb(255, 255, 255);
     position: relative;
     top: 94px;
@@ -286,7 +315,8 @@ body {
 }
 
 body::-webkit-scrollbar {
-    display: none; /* for Chrome, Safari, and Opera */
+    display: none;
+    /* for Chrome, Safari, and Opera */
 }
 
 
@@ -312,11 +342,16 @@ body::-webkit-scrollbar {
     font-weight: 1000;
     margin-left: 2rem;
     filter: drop-shadow(0 0 8px #ff0000);
-}.premiumtitle svg {
+}
+
+.premiumtitle svg {
     transform: translateY(-5px);
-}.premiumtitle h1 {
+}
+
+.premiumtitle h1 {
     font-size: 72px;
 }
+
 .premiuminfo {
     color: white;
     display: flex;
@@ -326,11 +361,15 @@ body::-webkit-scrollbar {
     letter-spacing: 0.1em;
     font-weight: 700;
     margin-left: 12rem;
-}.premiuminfo li {
+}
+
+.premiuminfo li {
     text-shadow: 1px 1px #000;
     margin: 0.25rem 0;
     font-size: 25px;
-}.premiuminfo ul {
+}
+
+.premiuminfo ul {
     margin: 1rem 0;
 }
 
@@ -346,15 +385,19 @@ body::-webkit-scrollbar {
     font-weight: 700;
     box-shadow: 0 0 8px #ffb7438c;
     transition: all 0.2s;
-}.premiuminfo button span {
+}
+
+.premiuminfo button span {
     color: #fff;
     text-shadow: 1px 1px #000;
-}.premiuminfo button:hover {
+}
+
+.premiuminfo button:hover {
     cursor: pointer;
     filter: drop-shadow(0 0 8px #FFB743)
 }
 
-.ads{
+.ads {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -373,7 +416,7 @@ body::-webkit-scrollbar {
     align-items: center;
     height: 104px;
     width: 100%;
-    border-bottom: 1px solid white ;
+    border-bottom: 1px solid white;
     color: #ffffff;
     font-style: normal;
     font-weight: 700;
@@ -393,15 +436,21 @@ body::-webkit-scrollbar {
     justify-content: center;
     margin-bottom: 6em;
     width: 100%;
-}.gametype-content-inside {
+}
+
+.gametype-content-inside {
     display: flex;
     overflow-x: scroll;
     width: 90%;
-}.gametype-content-inside img {
+}
+
+.gametype-content-inside img {
     margin-right: 2rem;
     margin-bottom: 1rem;
     transition: all 0.2s;
-}.gametype-content-inside img:hover {
+}
+
+.gametype-content-inside img:hover {
     cursor: pointer;
     transform: scale(0.95);
     filter: brightness(120%);
@@ -426,7 +475,7 @@ body::-webkit-scrollbar {
     align-items: center;
     height: 104px;
     width: 100%;
-    border-bottom: 1px solid white ;
+    border-bottom: 1px solid white;
     color: #ffffff;
     font-style: normal;
     font-weight: 700;
@@ -449,18 +498,20 @@ body::-webkit-scrollbar {
     height: 250px;
 }
 
-.topgamers-content{
+.topgamers-content {
     display: flex;
     justify-content: center;
     width: 100%;
 }
+
 .topgamers-content-inside {
     display: flex;
     width: 90%;
     overflow-x: scroll;
     padding: 1rem 0;
 }
-.tp-img-bx{
+
+.tp-img-bx {
     margin-top: 2em;
     margin-right: 2rem;
     height: 286px;
@@ -470,6 +521,7 @@ body::-webkit-scrollbar {
     border: 1px solid white;
     padding-right: 15rem;
 }
+
 .tp-img {
     display: flex;
     justify-content: center;
@@ -478,16 +530,19 @@ body::-webkit-scrollbar {
     border-radius: 1em;
     padding: 1rem;
 }
+
 .tp-img-img {
     height: 150px;
     width: 150px;
 }
+
 .tp-info-text {
     display: flex;
     justify-content: start;
     height: 50%;
     margin-top: 1em;
 }
+
 .tp-info-btn {
     display: flex;
     justify-content: center;
@@ -549,6 +604,7 @@ body::-webkit-scrollbar {
 .nextpicpropost {
     margin-top: 1em;
 }
+
 .pctp {
     width: 909px;
     height: 515px;
@@ -573,7 +629,7 @@ body::-webkit-scrollbar {
 }
 
 .actpost {
-    border-bottom: 1px solid #737373 ;
+    border-bottom: 1px solid #737373;
     margin-bottom: 2em;
 }
 
@@ -594,13 +650,14 @@ body::-webkit-scrollbar {
     width: 100%;
     display: flex;
 }
-.headercontent{
+
+.headercontent {
     margin-top: 1em;
     margin-left: 1em;
     width: 700px;
 }
 
-.actpost{
+.actpost {
     color: #efefef;
 }
 
@@ -619,42 +676,13 @@ body::-webkit-scrollbar {
     margin-right: 13em;
 }
 
-.setting {
-    height: 50px;
-    width: 50px;
-    border-radius: 2.5em;
-    -webkit-filter: grayscale(1) invert(1);
-    filter: grayscale(1) invert(1);
-    margin-left: 20px;
-}
-
-.headporf{
+.headporf {
     justify-content: center;
-    
-}
-
-.Edit{
-    width: 300px;
-    border-radius: 15px;
-    padding: 0.75rem 0;
-    font-size: 20px;
-}
-
-.under{
-    border-bottom: 1px solid #737373 ;
-    margin-bottom: 2em;
-    height: 20px;
-    justify-content: center;
-    margin-left: 300px;
-    margin-right: 300px;
 
 }
-
-
-
 
 /*ปุ่มเปลี่ยนรูปโปร*/
-.popup-content{
+.form-content {
     height: 250px;
     width: 500px;
     background: white;
@@ -663,31 +691,30 @@ body::-webkit-scrollbar {
     position: relative;
 }
 
-.input{
+.input {
     margin: 20px auto;
     display: block;
     width: 50%;
     padding: 8px;
     border: 1px solid gray;
 }
-.popup{
-    background:rgba( 0, 0, 0, 0.5 );
+
+.form {
     width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    display:none;
+    height: fit-content;
+    position: relative;
+    display: flex;
     justify-content: center;
     align-items: center;
     text-align: center;
 }
 
-.popup-content{
+.form-content {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1em;
+    gap: 2.4em;
     height: fit-content;
     width: 50%;
     background: white;
@@ -695,10 +722,10 @@ body::-webkit-scrollbar {
     border-radius: 5px;
     position: relative;
     padding: 2em;
-    
+
 }
 
-.popup-content > div {
+.form-content div {
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -706,33 +733,151 @@ body::-webkit-scrollbar {
     gap: 8px;
 }
 
-.popup-content label {
+.form-content label {
     font-size: 1em;
+    align-self: flex-start;
 }
 
-.popup-content input {
-    height: 2em;
+.form-content input {
+    height: fit-content;
     width: 100%;
-    display: block;
-    font-size: 1em;
+    font-size: 1.4em;
+    padding: 4px 12px;
+    border-radius: .1em;
+    border: none;
+    background-color: aliceblue;
+    text-align: start;
 }
 
 
-.input{
+
+.input {
     margin: 20px auto;
     display: block;
     width: 50%;
     padding: 8px;
     border: 1px solid gray;
-} 
-.close{
-    position:absolute;
-    top:-15px;
-    right:-15px;
-    background:white;
-    width: 2em;
-    height: 2em;
-    border-radius: 1em;
+}
+
+
+.save-btn {
+    height: fit-content;
+    font-size: 1.5em;
+    padding: .25em 5em;
+    border-radius: 2em;
+    border: none;
+    color: white;
+    background: rgb(63, 94, 251);
+    background: radial-gradient(circle, rgba(63, 94, 251, 1) 0%, rgba(252, 70, 107, 1) 100%);
     cursor: pointer;
+}
+
+#form-title-header {
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.form-content  label {
+    user-select: none;
+}
+
+#edit {
+    top: .25px;
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    align-self: flex-end;
+    bottom: 14px;
+    color: gray;
+    width: fit-content;
+    height: fit-content;
+    font-size: 1.2em;
+    cursor: pointer;
+    user-select: none;
+}
+
+/* Define the custom outline color for focused input fields */
+.form-content-item input:focus {
+    outline: 1.2px solid #7f0d3e;
+}
+
+
+
+/*
+-------------  Icons -----------------
+*/
+.gg-pen {
+    box-sizing: border-box;
+    position: relative;
+    display: block;
+    transform: rotate(-45deg) scale(var(--ggs, 1));
+    width: 14px;
+    height: 4px;
+    border-right: 2px solid transparent;
+    box-shadow:
+        0 0 0 2px,
+        inset -2px 0 0;
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+    margin-right: -2px;
+    left: 8px;
+    top: 4px;
+}
+
+.gg-pen::after,
+.gg-pen::before {
+    content: "";
+    display: block;
+    box-sizing: border-box;
+    position: absolute
+}
+
+.gg-pen::before {
+    background: currentColor;
+    border-left: 0;
+    right: -6px;
+    width: 3px;
+    height: 4px;
+    border-radius: 1px;
+    top: 0
+}
+
+.gg-pen::after {
+    width: 8px;
+    height: 7px;
+    border-top: 4px solid transparent;
+    border-bottom: 4px solid transparent;
+    border-right: 7px solid;
+    left: -11px;
+    top: -2px
+}
+
+/* Apply styles to the backdrop */
+#backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    /* Black backdrop with some transparency */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    /* Ensure it's above all other elements */
+}
+
+/* Apply styles to the message box */
+.message-box {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    color: green;
     font-size: 1.2em;
 }

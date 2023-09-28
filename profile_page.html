@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="./profile_page.css">
+
 </head>
 <header class="nav">
     <div class="imgbrand_box"><a href="index1.html">
@@ -39,7 +40,8 @@
 </header>
 
 <body>
-    <div class="body">
+
+    <div class="container-sidebar">
         <div class="sidebar">
             <div class="title-sidebar">
                 <h3>Discover</h3>
@@ -53,8 +55,7 @@
             </div>
         </div>
 
-
-        <div class="content2">
+        <div class="profile-content">
             <div class="headporf">
                 <div class="headerprof">
                     <img id="imgPrf" class="imghead1" src="" alt="">
@@ -62,70 +63,84 @@
                 <div class="headercontent">
                     <div class="topcontent">
                         <h3 id="namePrf" class="name01">Profile Name</h3>
-                        <button class="Edit" id="Edit">Edit Profile</button>
-                        <img class="setting"
-                            src="https://cdn-icons-png.flaticon.com/512/3019/3019014.png?fbclid=IwAR0NV-lmuYGqSh_VxKtqGV7gvKjE1_yBplSpkHoWfWom0tL4ITuJ8myiVXs"
-                            alt="">
                     </div>
                     <div class="followconten">
-                        <div id="emailPrf" class="follower">followers</div>
-                        <div id="hoursPrf" class="following">following</div>
+                        <div id="emailPrf" class="follower">email</div>
+                        <div id="hoursPrf" class="following"></div>
                     </div>
                 </div>
             </div>
 
 
-            <!--ป๊อบอัพ เปลี่ยนรูปโปร-->
-            <div class="popup">
-                <div class="popup-content" style="margin-left: -10em;">
-                    <button type="button" class="close">X</button>
-
-                    <div>
-                        <h2 style="color:black">Edit Profile</h2>
+            <!---->
+            <div class="form">
+                <div class="form-content" style="margin-left: -10em;">
+                    <div id="form-title-header">
+                        <h2 style="color:black">Info</h2>
+                        <div id="edit">
+                            <div>Edit</div>
+                            <i class="gg-pen" style="background-color: black;"></i>
+                        </div>
                     </div>
-                    <div>
-                        <label for="profile-name-input" style="color: black;">Name:</label>
-                        <input type="text" placeholder="Insert new name" id="profile-name-input">
+
+                    <div class="form-content-item">
+                        <label for="profile-name-input" style="color: black;">Profile Name</label>
+                        <input type="text" placeholder="Insert new name" id="profile-name-input" disabled>
                         <!--name-->
-
                     </div>
 
-                    <div>
-                        <label for="link-image-input" style="color: black;">Image Link:</label>
-                        <input type="text" placeholder="Insert img link" id="link-image-input">
+            
+                    <div class="form-content-item">
+                        <label for="link-image-input" style="color: black;">Image Link</label>
+                        <input type="text" placeholder="Insert img link" id="link-image-input" disabled>
                         <!--pic-->
-
                     </div>
 
-                    <div>
-                        <label for="password-input" style="color: black;">Password:</label>
-                        <input type="text" placeholder="Insert password" id="password-input">
+                    <div class="form-content-item">
+                        <label for="username-input" style="color: black;">Username</label>
+                        <input type="text"  id="username-input" disabled>
+                        <!--username-->
+                    </div>
+
+                    <div class="form-content-item">
+                        <label for="password-input" style="color: black;">Password</label>
+                        <input type="text" placeholder="Insert password" id="password-input" disabled>
                         <!--pass-->
-
                     </div>
 
-                    <div>
-                        <label for="email-input" style="color: black;">Email:</label>
-                        <input type="text" placeholder="Insert email" id="email-input">
+
+                    <div class="form-content-item">
+                        <label for="profile-name-input" style="color: black;">Email</label>
+                        <input type="text"  id="email-input" disabled>
                         <!--email-->
-
                     </div>
 
-                    <button type="submit" class="submit-edit" , id="submitUpdate">Submit</button>
+            
+
+            
+                    <button type="submit" class="save-btn" id="submitUpdate">Save</button>
                 </div>
             </div>
 
 
             <!--ป๊อบอัพ เปลี่ยนรุปโรป-->
 
+            <div id="online-time">
 
-            <div class="under"></div>
+            </div>
+
+    <!-- Add the backdrop and message box -->
+    <div id="backdrop">
+        <div class="message-box">
+            <p id="message-box-p">Successful!</p>
+        </div>
+
+
         </div>
     </div>
     </div>
 
     <script src="./profile_page.js"></script>
-
 </body>
 
 </html>

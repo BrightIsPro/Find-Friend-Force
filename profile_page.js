@@ -3,9 +3,18 @@ const profileName = document.getElementById("namePrf");
 const profileImage = document.getElementById("imgPrf");
 const submitUpdate = document.getElementById("submitUpdate");
 const navbarProfile = document.getElementById("navbar-profile");
+const backdrop = document.getElementById("backdrop");
 
 const emailPrf = document.getElementById("emailPrf");
 const hoursPrf = document.getElementById("hoursPrf");
+
+const profileNameInput = document.getElementById('profile-name-input');
+const linkImageInput = document.getElementById('link-image-input');
+const passwordInput = document.getElementById('password-input');
+const usernameInput = document.getElementById('username-input');
+const emailInput = document.getElementById('email-input');
+
+const message_box_p = document.getElementById("message-box-p");
 
 
 const apiPath = 'http://localhost:8000/';
@@ -16,6 +25,14 @@ var getUsernamae = "?";
 var getPasswrod = "?";
 var getEmail = "?@?";
 var getHours = 0;
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Your JavaScript code here
+  backdrop.style.display = 'none';
+});
+
+
 
 // On Load
 fetch(apiPath + 'users')
@@ -36,19 +53,21 @@ fetch(apiPath + 'users')
     getEmail = email;
     getHours = amount_hours;
 
-    if(
+    if (
       getUsernamae !== null,
       getPasswrod !== null,
       getEmail !== null,
       getHours != null) {
-        emailPrf.innerHTML = getEmail;
-        hoursPrf.innerHTML = "time: "+ timeToMinutes(getHours) + "mins";
-      }
+      emailPrf.innerHTML = getEmail;
+      hoursPrf.innerHTML = "time: " + timeToMinutes(getHours) + "s";
+    }
 
 
     profileImage.src = profile_picture;
     profileName.innerHTML = name_profile;
     navbarProfile.src = profile_picture;
+    usernameInput.value = getUsernamae;
+    emailInput.value = getEmail;
 
   })
   .catch(err => {
@@ -61,11 +80,11 @@ fetch(apiPath + 'users')
 
 // Fetch user data using GET
 fetch(apiPath + "users/0", {
-  method: 'GET',
-  headers: {
-    'Content-Type': 'application/json'
-  }
-})
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
   .then(res => {
     if (res.ok) {
       // The data was successfully fetched
@@ -77,15 +96,11 @@ fetch(apiPath + "users/0", {
   })
   .then(data => {
     // Use the fetched data as needed
-    let profile_name_input = document.getElementById("profile-name-input");
-    let link_image_input = document.getElementById("link-image-input");
-    let email_user_input = document.getElementById('email-input');
-    let password_user_input = document.getElementById('password-input');
 
-    email_user_input.value = data.email;
-    password_user_input.value = data.password;
-    profile_name_input.value = data.name_profile;
-    link_image_input.value = data.profile_picture;
+    profileNameInput.value = data.name_profile;
+    linkImageInput.value = data.profile_picture;
+    passwordInput.value = data.password;
+
   })
   .catch(error => {
     // Handle any errors that occurred during the request
@@ -94,25 +109,21 @@ fetch(apiPath + "users/0", {
 
 // Update user data using PUT
 submitUpdate.addEventListener('click', () => {
-  let profile_name_input = document.getElementById("profile-name-input");
-  let link_image_input = document.getElementById("link-image-input");
-  let email_user_input = document.getElementById('email-input');
-  let password_user_input = document.getElementById('password-input');
 
   fetch(apiPath + "users/0", {
-    method: 'PUT',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      name_profile: profile_name_input.value,
-      username: getUsernamae,
-      password: getPasswrod,
-      email: getEmail,
-      profile_picture: link_image_input.value,
-      amount_hours: getHours
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        name_profile: profileNameInput.value,
+        username: getUsernamae,
+        password: passwordInput.value,
+        email: getEmail,
+        profile_picture: linkImageInput.value,
+        amount_hours: getHours
+      })
     })
-  })
     .then(res => {
       if (res.ok) {
         // The data was successfully updated
@@ -122,9 +133,22 @@ submitUpdate.addEventListener('click', () => {
         throw new Error('Failed to update data');
       }
     })
-    .then(_data => {
-      alert(_data.message)
+    .then(async _data => {
+      // Show the message element
+      backdrop.style.display = 'flex';
+
+      delay = 1200; // in milliseconds (3 seconds)
+
+
+      const delayPromise = new Promise((resolve) => {
+        backdrop.style.display = 'flex';
+        message_box_p.innerHTML = _data.message;
+        setTimeout(resolve, delay);
+      });
+
+      await delayPromise;
       location.reload();
+
     })
     .catch(error => {
       // Handle any errors that occurred during the request
@@ -133,18 +157,10 @@ submitUpdate.addEventListener('click', () => {
 });
 
 
-// Drop down
-document.getElementById("Edit").addEventListener("click",function(){
-  document.querySelector(".popup").style.display="flex";
-})
-document.querySelector(".close").addEventListener("click",function(){
-  document.querySelector(".popup").style.display="none";
-})
-
 // timer to minites
 function timeToMinutes(timeString) {
   const parts = timeString.split(':');
-  
+
   if (parts.length !== 3) {
     throw new Error('Invalid time format');
   }
@@ -159,3 +175,32 @@ function timeToMinutes(timeString) {
 
   return hours * 60 + minutes + seconds / 60;
 }
+
+
+
+/* 
+----------- Toggle enable-disable input form
+*/
+const editButton = document.getElementById('edit');
+const formFields = document.querySelectorAll('input');
+let isEditing = false;
+
+// Initially hide the "Save" button
+submitUpdate.style.display = 'none';
+
+editButton.addEventListener('click', () => {
+  isEditing = !isEditing; // Toggle editing mode
+  formFields.forEach(field => {
+    field.disabled = !isEditing; // Enable/disable form fields
+  });
+
+  usernameInput.disabled = true;
+  emailInput.disabled = true;
+
+  // Toggle the visibility of the "Save" button
+  if (isEditing) {
+    submitUpdate.style.display = 'inline-block'; // Show the button
+  } else {
+    submitUpdate.style.display = 'none'; // Hide the button
+  }
+});
