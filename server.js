@@ -25,6 +25,7 @@ app.use(bdparser.json());
 /////////////////////////////////////////////////////////////////////////////////////
 // user //
 
+
 app.get('/users', async (req, res) => {
     const conn = await mysql.createConnection(dbConfig);
     const [data] = await conn.query("SELECT * FROM users");
