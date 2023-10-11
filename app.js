@@ -1,77 +1,110 @@
 const apiPath = "http://localhost:8000/";
-const pratyNameInput = document.getElementById("01");
-const party_name = document.getElementById("01").value;
-const submitCreate = document.getElementById("");
+const partyNameInput = document.getElementById("01");
+
+// COntain all data 
 var allData;
-
 // get template element
-var source = document.getElementById("duplicater");
-var destination = document.getElementById("incontent1");
-var templateElement = source.cloneNode(true);
+const temp = document.getElementById("duplicater");
+const destination = document.getElementById("incontent1");
+const templateElement = temp.cloneNode(true);
+temp.remove()
 
-source.remove();
+const sumbit_party_elm = document.getElementById('clickcreate')
 
-
-
-
-
-
-
-
-
-// On Load ----------------------------------------------- VVV
-fetch(apiPath + "party")
-  .then((res) => res.json())
-  .then((data) => {
-    console.log(data);
-    const pn = document.getElementById("ab1");
-
-    const { party_name, party_id } = data[0];
-
-    pn.innerHTML = party_name;
-    getPartid = party_id;
-
-    console.log();
-
-    allData = data;
-
-
+// Make a GET request to the API endpoint
+fetch(`${apiPath}party`, {
+  method: 'GET',
+  headers: {
+    'Accept': 'application/json',
+    // You may need to include additional headers, such as authentication tokens.
+  },
+})
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Failed to fetch data');
+    }
   })
-  .catch((err) => {
-    console.error("ERROR fetching data.");
+  .then((data) => {
+    // Process and use the data here
+    allData = data;
+    readData(data);
+  })
+  .catch((error) => {
+    console.error('Error:', error);
   });
 
 
 /*--------------------------------------------------*/
 
+function readData(data) {
+  for(let i = 0; i < data.length; i++) {
+    let clone = templateElement.cloneNode(true);
+    destination.appendChild(clone);
+    clone.id = "clon" + i
+  }
 
-const create_party =document.getElementById('create-party');
-// CREATE party
-create_party.addEventListener("click", () => {
-  fetch(apiPath + "party", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      user_id: 1,
-      party_name: party_name,
-    }),
+  update()
+
+
+}
+
+function update() {
+  const bright11 = document.getElementsByClassName("bright11");
+  
+  for(let i = 0; i < bright11.length; i++) {
+    bright11[i].innerHTML = allData[i].party_name;
+  }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+sumbit_party_elm.addEventListener('click', function() {
+// Make a GET request to the API endpoint
+
+})
+
+fetch(`${apiPath}party`, {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    // You may need to include additional headers, such as authentication tokens.
+  },
+  body: {
+    user_id: 1,
+    party_name: "123"
+  }
+})
+  .then((response) => {
+    if (response.ok) {
+      return response.json();
+    } else {
+      throw new Error('Failed to fetch data');
+    }
   })
-    .then((res) => {
-      if (res.ok) {
-        // The data was successfully updated
-        return res.json();
-      } else {
-        // Handle errors here
-        throw new Error("Failed to update data");
-      }
-    })
-    .then((_data) => {
-      console.log(_data);
-    })
-    .catch((error) => {
-      // Handle any errors that occurred during the request
-      console.error(error);
-    });
-});
+  .then((data) => {
+    // Process and use the data here
+    
+  })
+  .catch((error) => {
+    console.error('Error:', error);
+  });  

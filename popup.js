@@ -1,6 +1,6 @@
-const popup = document.getElementById('popupform');
+const popup = document.getElementsByClassName('popupbox');
 
-const dotdotdot = document.getElementById('dotdotdot')
+const dotdotdot = document.getElementsByTagName('popupbox')
 
 const popupOpen = () => {
     popup.style.display = "block";
@@ -14,4 +14,4 @@ let popupUpdateToggle = () => {
     popupUpdate.classList.toggle('active')
 }
 
-
+console.log(popup.length);
