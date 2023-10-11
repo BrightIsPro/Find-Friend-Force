@@ -1,0 +1,21 @@
+user.post & update
+{
+    "name_profile": "JaribK",
+    "username": "mewn7788",
+    "password": "asdwe122",
+    "email": "mewn7788@gmail.com",
+    "profile_picture": "https://avatars.githubusercontent.com/u/141174419?v=4",
+    "amount_hours": "00:00:05"
+}
+
+streaming_room.post
+{
+    "user_id" : {interger}, 
+    "streaming_name": "Rov ตึงๆ"
+}
+
+streaming.update
+{
+    "streaming_name": "Rov ตึงๆ"
+}
+
