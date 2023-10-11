@@ -340,61 +340,21 @@ a {
 }
 
 .rightside{
-  display: grid;
+  display: flex;
   width: 20%;
   height: 100%;
   justify-content: end;
   margin-left: 230px;
   position: relative;
 
+  align-items: center;
 
 
-
-  .popupbox{
-    background-color: grey;
-    border: 1px solid white;
-    width: fit-content;
-    position: absolute;
-    font-size: 20px;
-    font-style: bold;
-    margin-left: 0px;
-    height: fit-content;
-    border-radius: 5px;
-    right: 0;
-    top: 40px;
-    padding: 0.05rem 0.75rem;
-    
-    /* transform: translateY(50px); */
-    #edit{
-      height: 30px;
-      cursor: pointer;
-
-      &:hover {
-        filter: brightness(20%)
-      }
-    }
-    #delete{
-      height: 30px;
-      cursor: pointer;
-
-      &:hover {
-        filter: brightness(20%)
-      }
-    }
-  }
 }
 .bright1{
   width: 50%;
 }
-.PandP1{
-  margin-bottom: 10px;
-  display: flex;
-  font-size: 50px;
-  font-style: bold;
-  margin-left: -100px;
-  margin-top: -20px;
-  height: 50px;
-}
+
 
 a{
     text-decoration-line: none;
@@ -468,12 +428,6 @@ a{
     height: 80px;
 }
 
-.PandP1{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right:20px;
-}
 
 .joinbutton{
     width: 120px;
@@ -551,3 +505,10 @@ a{
   display:flex;
   align-self: left;
 }
+
+.dotdotdot > button {
+  height: 3em;
+  width: 5em;
+  cursor: pointer;
+}
+

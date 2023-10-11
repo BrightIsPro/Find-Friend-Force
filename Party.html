@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
-    <link rel="stylesheet" href="Party.css" />
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.js"></script>
-  </head>
 
-  <body>
-    <div id="app">
-      <header class="nav">
-        <div class="imgbrand_box">
-          <img
-            src="https://i.ibb.co/yF3MDjX/4161b325ebff16c75d3127844bbfe56e-removebg-preview.png"
-            alt="4161b325ebff16c75d3127844bbfe56e-removebg-preview"
-            border="0"
-          />
-          <h1>Triple F</h1>
-        </div>
-        <form>
-          <input
-            id="searchBox"
-            type="text"
-            placeholder="Search for Players or Game Types..."
-            autocomplete="off"
-          />
-          <ion-icon name="search"></ion-icon>
-          <div class="searchOut">
-            <!-- example : <ul>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home</title>
+  <link rel="stylesheet" href="Party.css" />
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <header class="nav">
+      <div class="imgbrand_box">
+        <img src="https://i.ibb.co/yF3MDjX/4161b325ebff16c75d3127844bbfe56e-removebg-preview.png"
+          alt="4161b325ebff16c75d3127844bbfe56e-removebg-preview" border="0" />
+        <h1>Triple F</h1>
+      </div>
+      <form>
+        <input id="searchBox" type="text" placeholder="Search for Players or Game Types..." autocomplete="off" />
+        <ion-icon name="search"></ion-icon>
+        <div class="searchOut">
+          <!-- example : <ul>
                     <li>
                       <a href="#">
                         <div class="searchUserInfo">
@@ -43,56 +42,41 @@
                       </a>
                     </li>
                   </ul> -->
-          </div>
-        </form>
-        <div class="box">
-          <img
-            class="picprofile_content"
-            src="https://www.matichon.co.th/wp-content/uploads/2022/05/92466-696x461-1.jpg"
-          />
-          <ion-icon class="notify_content" name="notifications"></ion-icon>
-          <img
-            class="coinshop_content"
-            src="https://i.ibb.co/mTqhGmV/8633377800bec812a4800dcd90b74a12.png"
-            alt="8633377800bec812a4800dcd90b74a12"
-            border="0"
-          />
         </div>
-      </header>
-      <div class="body">
-        <div class="sidebar">
-          <div class="title-sidebar">
-            <h3>Discover</h3>
-          </div>
-          <div class="menu-sidebar">
-            <div class="display1">
-              <a href="">Party</a><br />
-              <a href="">Stream</a><br />
-              <a href="">Friends</a><br />
-            </div>
+      </form>
+      <div class="box">
+        <img class="picprofile_content"
+          src="https://www.matichon.co.th/wp-content/uploads/2022/05/92466-696x461-1.jpg" />
+        <ion-icon class="notify_content" name="notifications"></ion-icon>
+        <img class="coinshop_content" src="https://i.ibb.co/mTqhGmV/8633377800bec812a4800dcd90b74a12.png"
+          alt="8633377800bec812a4800dcd90b74a12" border="0" />
+      </div>
+    </header>
+    <div class="body">
+      <div class="sidebar">
+        <div class="title-sidebar">
+          <h3>Discover</h3>
+        </div>
+        <div class="menu-sidebar">
+          <div class="display1">
+            <a href="">Party</a><br />
+            <a href="">Stream</a><br />
+            <a href="">Friends</a><br />
           </div>
         </div>
-        <div class="content1" >
-          <div class="inparty">
-            <h1>Party</h1>
-            <img
-              class="chat"
-              src="https://icon-library.com/images/white-chat-icon/white-chat-icon-8.jpg"
-              alt=""
-            />
-          </div>
-          <div class="incontent1" id="incontent1">
-            <div class="searchparty">
-              <form class="fixform">
-                <input
-                  id="searchBox"
-                  type="text"
-                  placeholder="Search"
-                  autocomplete="off"
-                />
-                <ion-icon name="search"></ion-icon>
-                <div class="searchOut">
-                  <!-- example : <ul>
+      </div>
+      <div class="content1">
+        <div class="inparty">
+          <h1>Party</h1>
+          <img class="chat" src="https://icon-library.com/images/white-chat-icon/white-chat-icon-8.jpg" alt="" />
+        </div>
+        <div class="incontent1" id="incontent1">
+          <div class="searchparty">
+            <form class="fixform">
+              <input id="searchBox" type="text" placeholder="Search" autocomplete="off" />
+              <ion-icon name="search"></ion-icon>
+              <div class="searchOut">
+                <!-- example : <ul>
                                 <li>
                                   <a href="#">
                                     <div class="searchUserInfo">
@@ -102,116 +86,99 @@
                                   </a>
                                 </li>
                               </ul> -->
-                </div>
-              </form>
-              <div class="cparty">
-                <a class="aparty" href="#" style="color: #2c81f0" @click="toggleCreatePartyDialog" id="create-party">+ Create Party</a>
-                <div class="popup" :class="{ 'visible': isCreatePartyDialogOpen }">
-                  <form>
-                    <label class="gayass">Create Party</label><br>
-                    <input id="01" class="add-party" v-model="newParty.name" type="text" name="" placeholder="Party Name"><br>
-                    <input id="02" class="add-party" v-model="newParty.game" type="text" name="" placeholder="Description"><br><br>
-                    <div class="popupBtn">
-                      <button class="round" @click="toggleCreatePartyDialog" style="--btn-color: red; --text-color: white;">CLOSE</button>
-                      <button id="clickcreate" class="round" onclick="duplicate()" @click="createParty" style="--btn-color: white; --text-color: black;">CREATE</button>
-                    </div>
-                  </form>
-                </div>
+              </div>
+            </form>
+            <div class="cparty">
+              <a class="aparty" href="#" style="color: #2c81f0" @click="toggleCreatePartyDialog" id="create-party">+
+                Create Party</a>
+              <div class="popup" :class="{ 'visible': isCreatePartyDialogOpen }">
+                <form>
+                  <label class="gayass">Create Party</label><br>
+                  <input id="input-party-name" class="add-party" v-model="newParty.name" type="text" name=""
+                    placeholder="Party Name"><br>
+                  <input id="02" class="add-party" v-model="newParty.game" type="text" name=""
+                    placeholder="Description"><br><br>
+                  <div class="popupBtn">
+                    <button class="round" @click="toggleCreatePartyDialog"
+                      style="--btn-color: red; --text-color: white;">CLOSE</button>
+                    <button id="clickcreate" class="round" onclick="duplicate()" @click="createParty"
+                      style="--btn-color: white; --text-color: black;">CREATE</button>
+                  </div>
+                </form>
               </div>
             </div>
-            <!------------------------ ห้องjoinเกม --------------------------->
-            <!------------------------ ห้องjoinเกม --------------------------->
-            <!------------------------ ห้องjoinเกม --------------------------->
-
-            <div class="boxcontent" id="duplicater">
-              <div class="GAY" id="duplicater1">
-                <img
-                  class="bright"
-                  src=" https://avatars.githubusercontent.com/u/119989222?s=400&u=1b75a1540c62303e8cca72a2588f526ec7cbc308&v=4"
-                  alt=""
-                />
-                <div class="bright1">
-                  <div id="ab1" class="bright11"></div><br>
-                  <div class="PandP">Public Party</div>
-                </div>
-                
-                <div class="rightside">
-                  <div class="dotdotdot">
-                    <p @click="togglePopupBox">...</p>
-                  </div>
-                  <div class="popupbox" id="popupbox" :class="{ 'visible': isPopupboxDialogOpen }">
-                    <div id="edit" class="Edit" @click="toggleEditPartyDialog">Edit</div>
-                    <div class="popup" id="edit-popup" :class="{ 'visible': isEditPartyDialogOpen }">
-                      <form id="fixposition">
-                        <label class="gayass">Edit Party</label><br>
-                        <input id="03" class="add-party" v-model="newParty.game" type="text" name="" id="edit-party" placeholder="New Party Name..."><br><br>
-                        <div class="popBtn">
-                          <button class="round" @click="toggleEditPartyDialog" style="--btn-color: red; --text-color: white;">CLOSE</button>
-                          <button id="clickupdate" class="round" style="--btn-color: white; --text-color: black;">DONE</button>
-                        </div>
-                      </form>
-                    </div>
-                    <div id="delete" class="delete" onclick="removeDuplicate()">Delete</div>
-                  </div>
-                  <div>
-                    
-                  </div>
-                  <div class="PandP1">
-                      <button class="joinbutton">
-                        <div>Join</div>
-                      </button>
-                  </div>
-                </div>
-              </div>
-              
-            </div>
-            <!-------------------------ห้อง joinเกม --------------------------->
-            <!-------------------------ห้อง joinเกม --------------------------->
-            <!-------------------------ห้อง joinเกม --------------------------->
-
-             
-            
           </div>
+          <!------------------------ ห้องjoinเกม --------------------------->
+          <!------------------------ ห้องjoinเกม --------------------------->
+          <!------------------------ ห้องjoinเกม --------------------------->
+
+          <div class="boxcontent" id="duplicater">
+            <div class="GAY" id="duplicater1">
+              <img class="bright"
+                src=" https://avatars.githubusercontent.com/u/119989222?s=400&u=1b75a1540c62303e8cca72a2588f526ec7cbc308&v=4"
+                alt="" />
+              <div class="bright1">
+                <div id="ab1" class="bright11"></div><br>
+                <div class="PandP">Public Party</div>
+              </div>
+
+              <div class="rightside">
+                <div class="PandP1">
+                  <button class="joinbutton">
+                    <div>Join</div>
+                  </button>
+                </div>
+
+                <div class="dotdotdot">
+                  <button class="method_edit">Edit</button>
+                  <button class="method_delete">Delete</button>
+                </div>
+
+              </div>
+            </div>
+
+          </div>
+          <!-------------------------ห้อง joinเกม --------------------------->
+          <!-------------------------ห้อง joinเกม --------------------------->
+          <!-------------------------ห้อง joinเกม --------------------------->
+
+
+
         </div>
       </div>
     </div>
+  </div>
 
-    <style>
-      /* Add CSS to control the visibility of the popup */
-      .popup {
-        display: none;
-      }
-  
-      .popup.visible {
-        display: block;
-      }
+  <style>
+    /* Add CSS to control the visibility of the popup */
+    .popup {
+      display: none;
+    }
 
-      #popupbox {
-        display: none;
-      }
+    .popup.visible {
+      display: block;
+    }
 
-      #popupbox.visible {
-        display: block
-      }
-    </style>
+    #popupbox {
+      display: none;
+    }
 
-    <script src="PartyAsset.js"></script>
-    <script src="popup.js"></script>
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+    #popupbox.visible {
+      display: block
+    }
+  </style>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
-   
-<!-- TEST -->
-<!-- 
+  <script src="PartyAsset.js"></script>
+  <script src="popup.js"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.x/dist/vue.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vuetify@2.x/dist/vuetify.js"></script>
+
+  <!-- TEST -->
+  <!-- 
     <script type="text/javascript">
       function addParty()
       {
@@ -221,72 +188,73 @@
       }
     </script> -->
 
-<!-- TEST -->
+  <!-- TEST -->
 
 
 
-    <script>
-      const host = "http://localhost:8000";
-      const app = new Vue({
-        el: '#app',
-        data: {
-          newParty: {
-            name: '',
-            game: '',
-          },
-          isCreatePartyDialogOpen: false,
-          isEditPartyDialogOpen: false,
-          isPopupboxDialogOpen: false
+  <script>
+    const host = "http://localhost:8000";
+    const app = new Vue({
+      el: '#app',
+      data: {
+        newParty: {
+          name: '',
+          game: '',
         },
-        methods: {
-          toggleCreatePartyDialog() {
-            // Toggle the visibility of the popup when the link is clicked
-            this.isCreatePartyDialogOpen = !this.isCreatePartyDialogOpen;
-          },
+        isCreatePartyDialogOpen: false,
+        isEditPartyDialogOpen: false,
+        isPopupboxDialogOpen: false
+      },
+      methods: {
+        toggleCreatePartyDialog() {
+          // Toggle the visibility of the popup when the link is clicked
+          this.isCreatePartyDialogOpen = !this.isCreatePartyDialogOpen;
+        },
 
-          toggleEditPartyDialog() {
-            let editElements = document.querySelectorAll('#edit');
+        toggleEditPartyDialog() {
+          let editElements = document.querySelectorAll('#edit');
 
-            editElements.forEach(editElement => {
-              this.isEditPartyDialogOpen = !this.isEditPartyDialogOpen;
-            });
-          },
-
-          togglePopupBox() {
-            let editPopups = document.querySelectorAll('#edit-popup');
-            
-            editPopups.forEach(editPopup => {
-              this.isPopupboxDialogOpen = !this.isPopupboxDialogOpen;
-            })
-          },
-
-          createParty() {
-            // Handle creating the party here
-            
-            const newParty = {
-              name: this.newParty.name,
-              game: this.newParty.game
-            };
-            
-            // You can perform any additional logic here, e.g., making an API request
-  
-            // After creating the party, toggle the visibility of the popup
-            this.isCreatePartyDialogOpen = !this.isCreatePartyDialogOpen;
-          },
-
-          updateParty() {
-            
-            const updatePartyName = {
-              name: this.updatePartyName.name
-            }
-
+          editElements.forEach(editElement => {
             this.isEditPartyDialogOpen = !this.isEditPartyDialogOpen;
+          });
+        },
+
+        togglePopupBox() {
+          let editPopups = document.querySelectorAll('#edit-popup');
+
+          editPopups.forEach(editPopup => {
+            this.isPopupboxDialogOpen = !this.isPopupboxDialogOpen;
+          })
+        },
+
+        createParty() {
+          // Handle creating the party here
+
+          const newParty = {
+            name: this.newParty.name,
+            game: this.newParty.game
+          };
+
+          // You can perform any additional logic here, e.g., making an API request
+
+          // After creating the party, toggle the visibility of the popup
+          this.isCreatePartyDialogOpen = !this.isCreatePartyDialogOpen;
+        },
+
+        updateParty() {
+
+          const updatePartyName = {
+            name: this.updatePartyName.name
           }
+
+          this.isEditPartyDialogOpen = !this.isEditPartyDialogOpen;
         }
-      });
-    </script>
-    <script src="app.js"></script>
-   
-    
-  </body>
+      }
+    });
+  </script>
+  <script src="app.js"></script>
+
+
+</body>
+
 </html>
