@@ -8,10 +8,10 @@ const backdrop = document.getElementById("backdrop");
 const emailPrf = document.getElementById("emailPrf");
 const hoursPrf = document.getElementById("hoursPrf");
 
-const profileNameInput = document.getElementById('profile-name-input');
-const linkImageInput = document.getElementById('link-image-input');
-const passwordInput = document.getElementById('password-input');
-const usernameInput = document.getElementById('username-input');
+const profileNameInput  = document.getElementById('profile-name-input');
+const linkImageInput    = document.getElementById('link-image-input');
+const passwordInput     = document.getElementById('password-input');
+const usernameInput     = document.getElementById('username-input');
 const emailInput = document.getElementById('email-input');
 
 const message_box_p = document.getElementById("message-box-p");
@@ -25,6 +25,9 @@ var getUsernamae = "?";
 var getPasswrod = "?";
 var getEmail = "?@?";
 var getHours = 0;
+var userId;
+var getlink;
+var getProfilename;
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -35,11 +38,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 // On Load
-fetch(apiPath + 'users')
+fetch(apiPath + 'users', {
+  method: "GET",
+  headers: {
+    'Content-Type': 'application/json'
+  }
+})
   .then(res => res.json())
   .then((data) => {
+
     console.log(data);
     const {
+      user_id,
       name_profile,
       username,
       password,
@@ -52,12 +62,16 @@ fetch(apiPath + 'users')
     getPasswrod = password;
     getEmail = email;
     getHours = amount_hours;
+    userId = user_id;
+    getlink = profile_picture;
+    getProfilename = name_profile;
 
     if (
       getUsernamae !== null,
       getPasswrod !== null,
       getEmail !== null,
-      getHours != null) {
+      getHours != null) 
+      {
       emailPrf.innerHTML = getEmail;
       hoursPrf.innerHTML = "time: " + timeToMinutes(getHours) + "s";
     }
@@ -66,7 +80,12 @@ fetch(apiPath + 'users')
     profileImage.src = profile_picture;
     profileName.innerHTML = name_profile;
     navbarProfile.src = profile_picture;
+
+    profileNameInput.value = getProfilename;
+    linkImageInput.value = getlink;
+    passwordInput.value = getPasswrod;
     usernameInput.value = getUsernamae;
+    
     emailInput.value = getEmail;
 
   })
@@ -78,39 +97,10 @@ fetch(apiPath + 'users')
 
 
 
-// Fetch user data using GET
-fetch(apiPath + "users/0", {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  })
-  .then(res => {
-    if (res.ok) {
-      // The data was successfully fetched
-      return res.json();
-    } else {
-      // Handle errors here
-      throw new Error('Failed to fetch data');
-    }
-  })
-  .then(data => {
-    // Use the fetched data as needed
-
-    profileNameInput.value = data.name_profile;
-    linkImageInput.value = data.profile_picture;
-    passwordInput.value = data.password;
-
-  })
-  .catch(error => {
-    // Handle any errors that occurred during the request
-    console.error(error);
-  });
-
 // Update user data using PUT
 submitUpdate.addEventListener('click', () => {
 
-  fetch(apiPath + "users/0", {
+  fetch(`${apiPath}users/${userId}`, {
       method: 'PUT',
       headers: {
         'Content-Type': 'application/json'
@@ -188,6 +178,18 @@ let isEditing = false;
 // Initially hide the "Save" button
 submitUpdate.style.display = 'none';
 
+
+
+
+
+
+
+
+
+
+
+
+
 editButton.addEventListener('click', () => {
   isEditing = !isEditing; // Toggle editing mode
   formFields.forEach(field => {
@@ -202,5 +204,42 @@ editButton.addEventListener('click', () => {
     submitUpdate.style.display = 'inline-block'; // Show the button
   } else {
     submitUpdate.style.display = 'none'; // Hide the button
+    notShowPassword()
   }
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const toggleButton = document.getElementById('eye');
+
+toggleButton.addEventListener('click', function() {
+  if( !isEditing ) return;
+
+  if (passwordInput.type === 'password') {
+    showPassword()
+  } else {
+    notShowPassword()
+  }
+})
+
+function showPassword() {
+  passwordInput.type = 'text';
+  toggleButton.style.color = '#000000'
+
+}
+
+function notShowPassword() {
+  passwordInput.type = 'password'; // Hide password as dots
+  toggleButton.style.color = '#555'
+}
